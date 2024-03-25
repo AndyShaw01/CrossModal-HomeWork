@@ -35,7 +35,7 @@
 
 
 ```shell
-nohup bash Scripts/your_test.py
+nohup bash Scripts/your_test.sh
 ```
 
 ## 数据集
