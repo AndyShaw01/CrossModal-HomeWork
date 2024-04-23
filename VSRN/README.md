@@ -41,7 +41,7 @@ Experiments validate that our method achieves a new state-of-the-art for the ima
 
 Besides, since our method only relies on the simple inner product as the similarity function, it is quite efficient at the inference stage. It is around 30 times faster than the current best method SCAN when tested on MS-COCO 1K dataset.
 
-![model](/fig/model.png)
+![model](./fig/model.png)
 
 ## Requirements 
 We recommended the following dependencies.
