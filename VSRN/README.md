@@ -1,4 +1,35 @@
 # Visual Semantic Reasoning for Image-Text Matching (VSRN)
+
+## Modified
+
+part 1:
+``` python
+tokens = nltk.tokenize.word_tokenize(str(line.strip()).lower().decode('utf-8'))
+->
+tokens = nltk.tokenize.word_tokenize(str(line.strip()).lower())
+```
+
+part 2:
+```python
+image = torch.Tensor(self.images[img_id])
+->
+image = torch.Tensor(self.images[int(img_id)])
+```
+
+part 3:
+```python
+vid_feats = self.vid2hid(vid_feats.view(-1, dim_vid))
+->
+vid_feats = self.vid2hid(vid_feats.reshape(-1, dim_vid))
+```
+
+part 4:
+```python
+self.rnn = self.rnn_cell(dim_hidden, dim_hidden, n_layers, batch_first=True,
+                        bidirectional=bidirectional, dropout=self.rnn_dropout_p)
+self.rnn = nn.GRU(512, 512, batch_first=True, dropout=0 if n_layers == 1 else 0.5, bidirectional=False)
+```
+---
 PyTorch code for VSRN described in the paper "Visual Semantic Reasoning for Image-Text Matching". The paper will appear in ICCV 2019 as oral presentation. It is built on top of the [VSE++](https://github.com/fartashf/vsepp).
 
 [Kunpeng Li](https://kunpengli1994.github.io/), [Yulun Zhang](http://yulunzhang.com/), [Kai Li](http://kailigo.github.io/), Yuanyuan Li and [Yun Fu](http://www1.ece.neu.edu/~yunfu/). "Visual Semantic Reasoning for Image-Text Matching", ICCV, 2019. [[pdf](https://arxiv.org/pdf/1909.02701.pdf)]
